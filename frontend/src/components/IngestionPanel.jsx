@@ -326,14 +326,14 @@ export const IngestionPanel = ({ activeScenario, onCustomUpload, onClearDocument
 
         let res = null;
         try {
-          res = await fetch('http://localhost:8000/api/screen-document', {
+          res = await fetch('https://veriforge-e0xz.onrender.com/api/screen-document', {
             method: 'POST',
             body: formData
           });
         } catch {
           // Fallback to 127.0.0.1 IPv4 if localhost doesn't route
           try {
-            res = await fetch('http://127.0.0.1:8000/api/screen-document', {
+            res = await fetch('https://veriforge-e0xz.onrender.com/api/screen-document', {
               method: 'POST',
               body: formData
             });
@@ -432,13 +432,13 @@ export const IngestionPanel = ({ activeScenario, onCustomUpload, onClearDocument
 
       let res = null;
       try {
-        res = await fetch('http://localhost:8000/api/generate-tampered-sample', {
+        res = await fetch('https://veriforge-e0xz.onrender.com/api/generate-tampered-sample', {
           method: 'POST',
           body: formData
         });
       } catch {
         try {
-          res = await fetch('http://127.0.0.1:8000/api/generate-tampered-sample', {
+          res = await fetch('https://veriforge-e0xz.onrender.com/api/generate-tampered-sample', {
             method: 'POST',
             body: formData
           });

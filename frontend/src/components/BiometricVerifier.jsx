@@ -203,7 +203,7 @@ export const BiometricVerifier = ({ activeScenario, onUpdateBiometrics }) => {
     try {
       let res = null;
       try {
-        res = await fetch('http://localhost:8000/api/verify-face', {
+        res = await fetch('https://veriforge-e0xz.onrender.com/api/verify-face', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -213,7 +213,7 @@ export const BiometricVerifier = ({ activeScenario, onUpdateBiometrics }) => {
         });
       } catch {
         try {
-          res = await fetch('http://127.0.0.1:8000/api/verify-face', {
+          res = await fetch('https://veriforge-e0xz.onrender.com/api/verify-face', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -297,7 +297,7 @@ export const BiometricVerifier = ({ activeScenario, onUpdateBiometrics }) => {
       }
     } catch (err) {
       console.error('Backend face verify error:', err);
-      alert('Biometric verification error: Failed to contact verification API at http://localhost:8000/api/verify-face.');
+      alert('Biometric verification error: Failed to contact verification API at https://veriforge-e0xz.onrender.com/api/verify-face.');
     } finally {
       setIsVerifying(false);
     }

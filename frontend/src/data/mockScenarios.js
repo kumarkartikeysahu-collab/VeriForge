@@ -1,5 +1,5 @@
 /**
- * SENTINEL-ID Scenarios Data Store
+ * VeriForge Scenarios Data Store
  * Clean initial state with zero hardcoded default or mock data.
  * All document records are dynamically ingested through live scanning.
  */

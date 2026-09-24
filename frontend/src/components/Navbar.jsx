@@ -40,7 +40,7 @@ export const Navbar = ({
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <h1 style={{ fontSize: '1.15rem', fontWeight: 'bold' }}>SENTINEL-ID</h1>
+              <h1 style={{ fontSize: '1.15rem', fontWeight: 'bold' }}>VeriForge</h1>
               <span className="badge badge-neutral">SIH26188</span>
             </div>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>

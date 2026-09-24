@@ -71,9 +71,9 @@ export const IngestionPanel = ({ activeScenario, onCustomUpload, onClearDocument
         stopCamera();
       }
     };
-    window.addEventListener('sentinel:camera-active', handleCameraConflict);
+    window.addEventListener('veriforge:camera-active', handleCameraConflict);
     return () => {
-      window.removeEventListener('sentinel:camera-active', handleCameraConflict);
+      window.removeEventListener('veriforge:camera-active', handleCameraConflict);
       stopCamera();
     };
   }, []);
@@ -96,7 +96,7 @@ export const IngestionPanel = ({ activeScenario, onCustomUpload, onClearDocument
     stopCamera();
 
     // Broadcast that Ingestion has acquired the camera
-    window.dispatchEvent(new CustomEvent('sentinel:camera-active', { detail: 'ingestion' }));
+    window.dispatchEvent(new CustomEvent('veriforge:camera-active', { detail: 'ingestion' }));
     const mode = overrideFacing || facingMode;
 
     try {
@@ -979,64 +979,6 @@ export const IngestionPanel = ({ activeScenario, onCustomUpload, onClearDocument
             </div>
           )}
 
-          {/* Adversarial Attack Testing & Data Augmentation Suite */}
-          <div style={{
-            marginBottom: '14px',
-            padding: '12px',
-            background: 'var(--bg-card-alt)',
-            border: '1px solid var(--border-color)',
-            borderRadius: 'var(--radius-sm)'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ShieldAlert size={14} color="#ef4444" /> Adversarial Attack Testing (Synthetic Augmentation)
-              </span>
-              <span className="badge badge-neutral" style={{ fontSize: '0.65rem' }}>
-                SIH Evaluation Suite
-              </span>
-            </div>
-            <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '8px', lineHeight: 1.3 }}>
-              Test how SENTINEL-ID detects adversarial manipulations that bypass classical ELA:
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
-              <button
-                type="button"
-                onClick={() => handleTriggerSyntheticAttack('POISSON_PHOTO_SWAP')}
-                className="btn btn-outline btn-sm"
-                style={{ fontSize: '0.7rem', padding: '5px 8px', justifyContent: 'flex-start' }}
-                title="Seamlessly splices an alternate portrait into photo slot"
-              >
-                📸 Poisson Photo Splicing
-              </button>
-              <button
-                type="button"
-                onClick={() => handleTriggerSyntheticAttack('FONT_LOOKALIKE_REPLACEMENT')}
-                className="btn btn-outline btn-sm"
-                style={{ fontSize: '0.7rem', padding: '5px 8px', justifyContent: 'flex-start' }}
-                title="Swaps DOB with lookalike font introducing +1.8px baseline shift"
-              >
-                🔤 Font Baseline Shift (+1.8px)
-              </button>
-              <button
-                type="button"
-                onClick={() => handleTriggerSyntheticAttack('SELECTIVE_INPAINTING')}
-                className="btn btn-outline btn-sm"
-                style={{ fontSize: '0.7rem', padding: '5px 8px', justifyContent: 'flex-start' }}
-                title="Erases security fields via selective inpainting"
-              >
-                🪄 Selective Field Inpaint
-              </button>
-              <button
-                type="button"
-                onClick={() => handleTriggerSyntheticAttack('ALL')}
-                className="btn btn-primary btn-sm"
-                style={{ fontSize: '0.7rem', padding: '5px 8px', justifyContent: 'flex-start' }}
-                title="Injects multi-vector attack with WhatsApp re-compression"
-              >
-                ⚡ Full Adversarial Suite
-              </button>
-            </div>
-          </div>
 
           <div style={{ 
             display: 'flex', 

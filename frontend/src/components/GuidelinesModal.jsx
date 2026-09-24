@@ -492,7 +492,7 @@ export const GuidelinesModal = ({ isOpen, onClose }) => {
                     <strong>The Problem with Classical ELA:</strong> When an ID card is forwarded through WhatsApp or Telegram, the platform re-compresses the image at Quality ~70 with 4:2:0 chroma subsampling. This flattens the global compression history and causes classical ELA to either fail or flag every word as forged.
                   </p>
                   <p style={{ margin: 0 }}>
-                    <strong>The SENTINEL-ID Dual-Stream Solution:</strong> Our system computes <em>localized spatial gradient variance</em> relative to the document's adaptive background baseline and couples it with <em>8×8 Discrete Cosine Transform (DCT) block residuals</em>. This ensures high detection accuracy without generating false-positive floods on forwarded social media images.
+                    <strong>The VeriForge Dual-Stream Solution:</strong> Our system computes <em>localized spatial gradient variance</em> relative to the document's adaptive background baseline and couples it with <em>8×8 Discrete Cosine Transform (DCT) block residuals</em>. This ensures high detection accuracy without generating false-positive floods on forwarded social media images.
                   </p>
                 </div>
               </div>

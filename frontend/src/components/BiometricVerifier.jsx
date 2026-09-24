@@ -57,9 +57,9 @@ export const BiometricVerifier = ({ activeScenario, onUpdateBiometrics }) => {
         stopCamera();
       }
     };
-    window.addEventListener('sentinel:camera-active', handleCameraConflict);
+    window.addEventListener('veriforge:camera-active', handleCameraConflict);
     return () => {
-      window.removeEventListener('sentinel:camera-active', handleCameraConflict);
+      window.removeEventListener('veriforge:camera-active', handleCameraConflict);
       stopCamera();
     };
   }, []);
@@ -113,7 +113,7 @@ export const BiometricVerifier = ({ activeScenario, onUpdateBiometrics }) => {
     stopCamera();
 
     // Broadcast that Biometrics has acquired the camera
-    window.dispatchEvent(new CustomEvent('sentinel:camera-active', { detail: 'biometric' }));
+    window.dispatchEvent(new CustomEvent('veriforge:camera-active', { detail: 'biometric' }));
     const mode = overrideFacing || facingMode;
 
     try {
